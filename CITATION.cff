@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use sailboat-hydro or the Nordic sailboat benchmark, please cite FairHelm and the Zenodo DOI."
+title: "sailboat-hydro"
+version: "1.0.0"
+license: MIT
+authors:
+  - family-names: Nareyko
+    given-names: Vadim
+    affiliation: FairHelm
+doi: 10.5281/zenodo.23374417
+url: https://fairhelm.com/en/yachts/formulas/
+repository-code: https://github.com/nareyko/sailboat-hydro
+abstract: >-
+  Python library for FairHelm sailboat hydrodynamic formulas (hull speed,
+  capsize screening, displacement/length, comfort ratio, sail area/displacement)
+  and a bundled Open European & Nordic Sailboat Benchmark of 93 models.
+  Zero-Network: formulas and data ship inside the package with no HTTP to
+  api.fairhelm.com.
+keywords:
+  - sailboat
+  - yacht
+  - hydrodynamics
+  - fairhelm
+  - nordic
+preferred-citation:
+  type: dataset
+  title: "Open European & Nordic Sailboat Benchmark (93 Models)"
+  authors:
+    - family-names: Nareyko
+      given-names: Vadim
+      affiliation: FairHelm
+  year: 2026
+  doi: 10.5281/zenodo.23374417
+  url: https://doi.org/10.5281/zenodo.23374417
