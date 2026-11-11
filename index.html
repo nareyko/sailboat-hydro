@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="FairHelm sailboat hydrodynamic formulas + 93-model Nordic/European benchmark" /><link rel="canonical" href="https://nareyko.github.io/sailboat-hydro/" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>sailboat-hydro</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Home";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = "/sailboat-hydro/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> sailboat-hydro
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Home</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#pages">Pages</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#install-local">Install (local)</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="models/">93-model index</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="formulas/">Formulas</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">sailboat-hydro</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Home</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/nareyko/fairhelm-2026/edit/master/packages/sailboat-hydro/docs/index.md">Edit on nareyko/fairhelm-2026</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="sailboat-hydro">sailboat-hydro</h1>
+<p>Zero-Network Python library for FairHelm sailboat hydrodynamic ratios and the
+Open European &amp; Nordic Sailboat Benchmark (<strong>93</strong> models).</p>
+<table>
+<thead>
+<tr>
+<th>Link</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Methodology</td>
+<td><a href="https://fairhelm.com/en/yachts/formulas/">fairhelm.com/en/yachts/formulas/</a></td>
+</tr>
+<tr>
+<td>Zenodo DOI</td>
+<td><a href="https://doi.org/10.5281/zenodo.23374417">10.5281/zenodo.23374417</a></td>
+</tr>
+<tr>
+<td>PyPI (when published)</td>
+<td><code>pip install sailboat-hydro</code></td>
+</tr>
+<tr>
+<td>OpenAPI snapshot</td>
+<td><a href="https://fairhelm.com/open-data/yacht-specs/v1/openapi.yaml">open-data yacht-specs</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="pages">Pages</h2>
+<ul>
+<li><a href="models/">93-model index</a> — every card links to its canonical FairHelm URL</li>
+<li><a href="formulas/">Formulas</a> — hull speed, CSF, comfort, D/L, SA/D</li>
+</ul>
+<h2 id="install-local">Install (local)</h2>
+<pre><code class="language-bash">pip install sailboat-hydro
+</code></pre>
+<pre><code class="language-python">from sailboat_hydro import hull_speed_kn, load_nordic_benchmark
+
+bench = load_nordic_benchmark()
+assert bench.model_count == 93
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="models/" class="btn btn-neutral float-right" title="93-model index">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/nareyko/fairhelm-2026" class="fa fa-code-fork" style="color: #fcfcfc"> nareyko/fairhelm-2026</a>
+        </span>
+    
+    
+    
+      <span><a href="models/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2026-11-11 12:39:48.117610+00:00
+-->
