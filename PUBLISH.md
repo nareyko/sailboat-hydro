@@ -28,12 +28,11 @@ password = pypi-...
 ## Build & verify locally (no token needed)
 
 ```bash
-# sibling: ~/projects/sailboat-hydro  (or FairHelm packages/sailboat-hydro)
+cd packages/sailboat-hydro
 python -m pip install -e ".[dev]"
 ruff check .
 mypy src
 pytest -q
-export FAIRHELM_ROOT=~/projects/fairhelm-2026   # when not in monorepo
 python scripts/sync_benchmark.py
 python -m build
 python -m twine check dist/*
@@ -71,5 +70,22 @@ pip install sailboat-hydro==1.0.0
 ## After publish
 
 1. Confirm https://pypi.org/project/sailboat-hydro/
-2. Confirm https://github.com/nareyko/sailboat-hydro matches the released tag.
-3. Live for-ai / llms lines appear after the next FairHelm frontend deploy.
+2. Sync / tag [nareyko/sailboat-hydro](https://github.com/nareyko/sailboat-hydro) (sibling `~/projects/sailboat-hydro`).
+3. Live for-ai / llms lines appear after the next frontend deploy.
+
+## Local dry run verified (2026-11-11 · agent · no upload)
+
+Fresh `.venv` in this package (`gitignored`):
+
+| Step | Result |
+|---|---|
+| `ruff check .` | pass |
+| `mypy src` | pass (4 files) |
+| `pytest -q` | **10 passed** |
+| `python scripts/sync_benchmark.py` | 93 models (no git delta) |
+| `python -m build` | `sailboat_hydro-1.0.0` sdist + wheel |
+| `twine check dist/*` | **PASSED** (whl + tar.gz) |
+| clean-venv wheel smoke | `hull_speed_kn(9.35)≈7.43`; benchmark **93**; DOI `10.5281/zenodo.23374417` |
+
+**Owner-only next:** `twine upload` (TestPyPI then PyPI) with token — do **not** commit tokens or `dist/`.  
+Evidence note: `specs/platform/strategy/research/qa33-sailboat-hydro-pypi-prep-2026-11-11.md`.

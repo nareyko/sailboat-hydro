@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "sailboat-hydro"
-version = "1.0.0"
+version = "1.0.1"
 description = "FairHelm sailboat hydrodynamic formulas (hull speed, CSF, D/L, comfort ratio) plus a bundled 93-model Nordic/European benchmark. Zero-Network: no HTTP to api.fairhelm.com."
 readme = "README.md"
 license = { text = "MIT" }
@@ -36,8 +36,9 @@ dependencies = []
 
 [project.urls]
 Homepage = "https://fairhelm.com/en/yachts/formulas/"
-Documentation = "https://fairhelm.com/en/yachts/formulas/"
+Documentation = "https://nareyko.github.io/sailboat-hydro/"
 Repository = "https://github.com/nareyko/sailboat-hydro"
+Publisher = "https://arviser.com/"
 "Open data" = "https://fairhelm.com/open-data/yacht-specs/v1/openapi.yaml"
 DOI = "https://doi.org/10.5281/zenodo.23374417"
 Issues = "https://github.com/nareyko/sailboat-hydro/issues"
@@ -49,6 +50,9 @@ dev = [
   "mypy>=1.14",
   "build>=1.2",
   "twine>=6.0",
+]
+docs = [
+  "mkdocs>=1.6",
 ]
 
 [tool.hatch.build.targets.wheel]
@@ -63,6 +67,10 @@ include = [
   "LICENSE",
   "CITATION.cff",
   "PUBLISH.md",
+  "PUBLISH-DOCS.md",
+  "mkdocs.yml",
+  ".readthedocs.yaml",
+  "docs",
   "pyproject.toml",
 ]
 

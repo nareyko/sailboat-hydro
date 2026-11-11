@@ -1,0 +1,24 @@
+site_name: sailboat-hydro
+site_description: FairHelm sailboat hydrodynamic formulas + 93-model Nordic/European benchmark
+site_url: https://nareyko.github.io/sailboat-hydro/
+repo_url: https://github.com/nareyko/fairhelm-2026
+repo_name: nareyko/fairhelm-2026
+edit_uri: edit/master/packages/sailboat-hydro/docs/
+
+theme:
+  name: readthedocs
+
+nav:
+  - Home: index.md
+  - 93-model index: models.md
+  - Formulas: formulas.md
+
+markdown_extensions:
+  - tables
+
+docs_dir: docs
+site_dir: site
+
+extra:
+  fairhelm_canon: https://fairhelm.com/en/yachts/formulas/
+  zenodo_doi: https://doi.org/10.5281/zenodo.23374417

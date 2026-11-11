@@ -2,14 +2,18 @@
 
 **Zero-Network** Python library for FairHelm sailboat hydrodynamic ratios and the Open European & Nordic Sailboat Benchmark (93 models).
 
+Docs pack (MkDocs / RTD / GH Pages PREP): [`docs/`](./docs/) · [`PUBLISH-DOCS.md`](./PUBLISH-DOCS.md) · regenerate with `python scripts/generate_docs_models.py`.
+
 Formulas and the JSON snapshot ship inside the wheel. Calls run locally. There is **no HTTP** to `api.fairhelm.com`, no Postgres, and no CapEx / listing decoder.
 
 | Link | URL |
 |---|---|
 | **Methodology (formulas)** | https://fairhelm.com/en/yachts/formulas/ |
+| **Docs (93 models)** | https://nareyko.github.io/sailboat-hydro/ |
 | **Open data / OpenAPI** | https://fairhelm.com/open-data/yacht-specs/v1/openapi.yaml |
 | **Benchmark DOI** | https://doi.org/10.5281/zenodo.23374417 |
 | **GitHub** | https://github.com/nareyko/sailboat-hydro |
+| **Publisher (Arviser)** | https://arviser.com/ |
 | **Sibling MCP (npm)** | https://www.npmjs.com/package/@nareyko/mcp-yacht-specs |
 | **Listing review (€49)** | https://fairhelm.com/en/yachts/services/listing-review/ |
 
@@ -19,10 +23,10 @@ Formulas and the JSON snapshot ship inside the wheel. Calls run locally. There i
 pip install sailboat-hydro
 ```
 
-From this repo (or FairHelm `packages/sailboat-hydro` mirror):
+From a local checkout of this monorepo package:
 
 ```bash
-pip install -e ".[dev]"
+pip install -e "packages/sailboat-hydro[dev]"
 ```
 
 ## Quick start
@@ -67,13 +71,13 @@ print(bench.zenodo_doi)
 | `sail_area_displacement(sa_m2, disp_kg)` | SA/D |
 | `load_nordic_benchmark()` | Bundled 93-model Nordic/European benchmark |
 
-Formula constants match `@nareyko/mcp-yacht-specs` and the FairHelm frontend formula SSOT. Refresh the bundled JSON from the FairHelm mcp snapshot (see [`SYNC.md`](./SYNC.md)):
+Formula constants match `@nareyko/mcp-yacht-specs` (`packages/mcp-yacht-specs/src/formulas.ts`) and the FairHelm frontend formula SSOT. Refresh the bundled JSON (see [`SYNC.md`](./SYNC.md)):
 
 ```bash
-export FAIRHELM_ROOT=~/projects/fairhelm-2026
-python scripts/sync_benchmark.py
+python packages/sailboat-hydro/scripts/sync_benchmark.py
 ```
 
+Canonical public repo: [nareyko/sailboat-hydro](https://github.com/nareyko/sailboat-hydro) · sibling `~/projects/sailboat-hydro`.
 ## Citation
 
 Please cite FairHelm formulas and the Zenodo deposit:
@@ -95,6 +99,7 @@ Also see [`CITATION.cff`](./CITATION.cff).
 ## Develop / test
 
 ```bash
+cd packages/sailboat-hydro
 python -m pip install -e ".[dev]"
 ruff check .
 mypy src
